@@ -1,0 +1,99 @@
+{
+  "benchmark_timestamp": "2026-10-30T05:20:47Z",
+  "total_evaluated_scenarios": 5,
+  "unvalidated_baseline_system": {
+    "confusion_matrix": {
+      "TP": 2,
+      "FP": 3,
+      "TN": 0,
+      "FN": 0
+    },
+    "metrics": {
+      "precision": 0.4,
+      "recall": 1.0,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "f1_score": 0.5714
+    }
+  },
+  "axiom_dfir_hybrid_system": {
+    "confusion_matrix": {
+      "TP": 2,
+      "FP": 0,
+      "TN": 3,
+      "FN": 0
+    },
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "f1_score": 1.0
+    }
+  },
+  "operational_performance": {
+    "avg_claim_verification_latency_ms": 0.0,
+    "investigation_completion_rate": 1.0,
+    "inference_metrics": {
+      "total_requests": 0,
+      "total_input_tokens": 0,
+      "total_output_tokens": 0,
+      "total_cached_tokens": 0,
+      "total_tokens": 0,
+      "estimated_cost_usd": 0,
+      "profile_distribution": {}
+    }
+  },
+  "scenario_details": [
+    {
+      "scenario_id": "SCEN-01",
+      "description": "True Positive: CobaltStrike Beacon PowerShell In-Memory & C2",
+      "ground_truth": "MALICIOUS",
+      "validation_status": "VERIFIED",
+      "confidence": 0.95,
+      "baseline_verdict": "CONFIRMED_MALICE (HALLUCINATION_PRONE)",
+      "axiom_verdict": "VERIFIED_COMPROMISE",
+      "verification_latency_ms": 0.0
+    },
+    {
+      "scenario_id": "SCEN-02",
+      "description": "AI Hallucination: Fabricated Mimikatz Injection into PID 9999",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "validation_status": "UNVERIFIED",
+      "confidence": 0.1,
+      "baseline_verdict": "CONFIRMED_MALICE (HALLUCINATION_PRONE)",
+      "axiom_verdict": "REJECTED_OR_CONTRADICTED",
+      "verification_latency_ms": 0.0
+    },
+    {
+      "scenario_id": "SCEN-03",
+      "description": "Attacker Spoofed PPID: Claiming PID 4120 spawned by svchost.exe",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "validation_status": "CONTRADICTED",
+      "confidence": 0.0,
+      "baseline_verdict": "CONFIRMED_MALICE (HALLUCINATION_PRONE)",
+      "axiom_verdict": "REJECTED_OR_CONTRADICTED",
+      "verification_latency_ms": 0.0
+    },
+    {
+      "scenario_id": "SCEN-04",
+      "description": "True Positive: Dropped Payload with Confirmed Hash Match",
+      "ground_truth": "MALICIOUS",
+      "validation_status": "VERIFIED",
+      "confidence": 0.95,
+      "baseline_verdict": "CONFIRMED_MALICE (HALLUCINATION_PRONE)",
+      "axiom_verdict": "VERIFIED_COMPROMISE",
+      "verification_latency_ms": 0.0
+    },
+    {
+      "scenario_id": "SCEN-05",
+      "description": "AI False Alarm: Fabricated Remote Connection to External Bank IP",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "validation_status": "UNVERIFIED",
+      "confidence": 0.1,
+      "baseline_verdict": "CONFIRMED_MALICE (HALLUCINATION_PRONE)",
+      "axiom_verdict": "REJECTED_OR_CONTRADICTED",
+      "verification_latency_ms": 0.0
+    }
+  ]
+}

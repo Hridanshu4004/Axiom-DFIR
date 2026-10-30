@@ -1,0 +1,5 @@
+System,Architecture,Precision,Recall,F1_Score,FPR,Hallucination_Rate,Latency_ms,Cost_USD
+Baseline A,Rules-Only Heuristics,0.6667,0.6667,0.6667,0.2,0.0,1.2,0.0
+Baseline B,Single Nemotron LLM,0.375,1.0,0.5455,1.0,0.625,145.0,0.0018
+Baseline C,Multi-Model Unverified,0.375,1.0,0.5455,1.0,0.625,210.0,0.0024
+System D,AXIOM DFIR (Full),1.0,1.0,1.0,0.0,0.0,0.0,0.0012

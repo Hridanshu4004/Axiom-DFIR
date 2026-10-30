@@ -1,0 +1,168 @@
+{
+  "timestamp": "2026-10-30T07:42:42Z",
+  "scenarios_count": 8,
+  "systems": {
+    "Baseline_A_Rules_Only": {
+      "confusion_matrix": {
+        "TP": 2,
+        "FP": 1,
+        "TN": 4,
+        "FN": 1
+      },
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.3333,
+      "f1_score": 0.6667,
+      "hallucination_rate": 0.3333,
+      "avg_latency_ms": 1.2,
+      "estimated_cost_usd": 0.0
+    },
+    "Baseline_B_Single_Nemotron": {
+      "confusion_matrix": {
+        "TP": 3,
+        "FP": 5,
+        "TN": 0,
+        "FN": 0
+      },
+      "precision": 0.375,
+      "recall": 1.0,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "f1_score": 0.5455,
+      "hallucination_rate": 0.625,
+      "avg_latency_ms": 145.0,
+      "estimated_cost_usd": 0.0018
+    },
+    "Baseline_C_MultiModel_Unverified": {
+      "confusion_matrix": {
+        "TP": 3,
+        "FP": 5,
+        "TN": 0,
+        "FN": 0
+      },
+      "precision": 0.375,
+      "recall": 1.0,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "f1_score": 0.5455,
+      "hallucination_rate": 0.625,
+      "avg_latency_ms": 210.0,
+      "estimated_cost_usd": 0.0024
+    },
+    "System_D_AXIOM_DFIR_Full": {
+      "confusion_matrix": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 5,
+        "FN": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "f1_score": 1.0,
+      "hallucination_rate": 0.0,
+      "avg_latency_ms": 0.0,
+      "estimated_cost_usd": 0.0012
+    }
+  },
+  "scenarios": [
+    {
+      "id": "SCEN-01",
+      "category": "CANONICAL",
+      "description": "True Positive: CobaltStrike Beacon PowerShell In-Memory & C2",
+      "ground_truth": "MALICIOUS",
+      "baseline_a": "MALICIOUS",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "VERIFIED",
+      "system_d_confirmed": true,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-02",
+      "category": "ADVERSARIAL_HALLUCINATION",
+      "description": "AI Hallucination: Fabricated Mimikatz Injection into Ghost PID 9999",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "baseline_a": "BENIGN",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "UNVERIFIED",
+      "system_d_confirmed": false,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-03",
+      "category": "ADVERSARIAL_SPOOFING",
+      "description": "Attacker Spoofed PPID: Claiming PID 4120 spawned by svchost.exe (PID 6000)",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "baseline_a": "BENIGN",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "CONTRADICTED",
+      "system_d_confirmed": false,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-04",
+      "category": "CANONICAL",
+      "description": "True Positive: Dropped Backdoor Hash Match",
+      "ground_truth": "MALICIOUS",
+      "baseline_a": "MALICIOUS",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "VERIFIED",
+      "system_d_confirmed": true,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-05",
+      "category": "ADVERSARIAL_HALLUCINATION",
+      "description": "AI False Alarm: Fabricated Remote Connection to External Financial IP",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "baseline_a": "BENIGN",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "UNVERIFIED",
+      "system_d_confirmed": false,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-06",
+      "category": "HOLDOUT_DUAL_USE",
+      "description": "Benign Dual-Use Administration: WMIC query executed by sysadmin",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "baseline_a": "MALICIOUS",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "PARTIALLY_VERIFIED",
+      "system_d_confirmed": false,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-07",
+      "category": "HOLDOUT_TAMPERING",
+      "description": "Zero-Evidence Fabricated Injection: LLM hallucinating CobaltStrike Reflective DLL",
+      "ground_truth": "BENIGN_OR_ABSENT",
+      "baseline_a": "BENIGN",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "PARTIALLY_VERIFIED",
+      "system_d_confirmed": false,
+      "verification_latency_ms": 0.0
+    },
+    {
+      "id": "SCEN-08",
+      "category": "CANONICAL",
+      "description": "True Positive: RDP Inbound Session with Malicious Port Forward",
+      "ground_truth": "MALICIOUS",
+      "baseline_a": "BENIGN",
+      "baseline_b": "MALICIOUS",
+      "baseline_c": "MALICIOUS",
+      "system_d_axiom": "VERIFIED",
+      "system_d_confirmed": true,
+      "verification_latency_ms": 0.0
+    }
+  ]
+}
