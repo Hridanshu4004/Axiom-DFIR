@@ -1,0 +1,44 @@
+# Never bake secrets into the image
+.env
+.env.*
+!.env.qwen.example
+API_KEY.txt
+*_API_KEY*
+*.key
+
+# Version control / CI
+.git
+.github
+.gitignore
+
+# Heavy media + generated artifacts (not needed at runtime) - recursive
+**/*.mp4
+**/*.png
+**/*.pdf
+**/*.E01
+**/*.img
+**/*.raw
+**/*.vmem
+
+# Run outputs / local state
+reports/
+analysis/
+exports/
+sentinel-results/
+artifacts/
+run_archive/
+HANDOVER-QWEN.md
+DEVPOST-FORM-PACK.md
+.claude/
+/tmp
+*.log
+
+# Python caches / local envs - recursive
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+.pytest_cache/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/

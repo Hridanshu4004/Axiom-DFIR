@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  axiom-dfir:
+    build:
+      context: .
+      dockerfile: Axiom DFIR/Dockerfile
+      target: demo
+    image: axiom-dfir:latest
+    container_name: axiom-dfir
+    environment:
+      - NEBIUS_API_KEY=${NEBIUS_API_KEY:-}
+      - NEBIUS_BASE_URL=${NEBIUS_BASE_URL:-https://api.tokenfactory.nebius.com/v1/}
+      - AXIOM_FAST_MODEL=${AXIOM_FAST_MODEL:-nvidia/Nemotron-3.5-Lightning}
+      - AXIOM_BALANCED_MODEL=${AXIOM_BALANCED_MODEL:-nvidia/Nemotron-3-Super}
+      - AXIOM_DEEP_MODEL=${AXIOM_DEEP_MODEL:-nvidia/Nemotron-3-Ultra-550B}
+      - AXIOM_MOCK_NEBIUS=${AXIOM_MOCK_NEBIUS:-0}
+      - AXIOM_WEB_PORT=8080
+      - AXIOM_WEB_HOST=0.0.0.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./evidence:/evidence:ro
+      - ./case_output:/tmp/axiom-dfir
+    command: ["python", "run_web.py", "--host", "0.0.0.0", "--port", "8080"]
+    restart: unless-stopped
+
