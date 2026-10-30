@@ -1,0 +1,83 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+# project venv created by ./setup.sh --native - never commit it
+.venv/
+venv/
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.qwen.example
+API_KEY.txt
+apikey.txt
+/analysis/
+cached_outputs/
+results/gpt/run03_rd01_bootstrap.log
+
+# Local-only run artifacts - nothing under artifacts/ ships
+artifacts/
+verify_*.sh
+telemetry/runs.db
+telemetry/artifacts/
+/tmp/*.log
+.claude/
+# Vol3 analysis pollution (Commit 9a)
+file.0x*.img
+file.0x*.dat
+file.0x*.vacb
+tmp_*.vol3
+live_vol3_*.txt
+run_archive/
+audit/forbidden_tokens.local.txt
+# slot 31C2-FIX-A: private denylist for case-specific PIDs / paths /
+# process names used by tests/test_integrity_sweep.py. The example
+# file (tests/fixtures/integrity_denylist.example.json) is tracked;
+# the real denylist with case-specific values is local-only.
+tests/fixtures/integrity_denylist.json
+reports/
+BACKLOG.md
+BLIND_TEST_ATTESTATION.md
+BRANCH_C_TRIGGER.md
+BYPASS-TESTING.md
+CHECKPOINT.md
+CLAUDE-bootstrap.md
+CODING-DAY-PLAYBOOK.md
+DATASET.md
+EVIDENCE-DOWNLOAD-GUIDE.md
+PLAYBOOK.md
+PLAYBOOK_EXTENDED.md
+RULES_LOCKED.md
+docs/DECISION_TREES.md
+docs/TASKS.md
+tests/M1_criteria.md
+*.bak
+*.bak.*
+*.agn
+*.orig
+# Evidence stays local-only (chain of custody) -- never commit evidence
+*-case/
+*.E01
+*.vmem
+logs/
+_debug/
+HANDOFF_*.md
+SUBMISSION-RUNBOOK.md
+DEVPOST-FORM-PACK.md
+
+# run-rd01 is a LOCAL Claude reference run, intentionally NOT shipped (case-neutral
+# policy keeps run outputs uncommitted). The shipped, verifiable Qwen evidence is
+# the sanitized aggregates in docs/qwen-runs/. NOTE: the broad `artifacts/` ignore
+# above excludes the parent dir, so any `!artifacts/run-rd01` negation is dead.
+
+# Submission deliverable -- keep tracked despite the broad DATASET.md ignore
+!docs/DATASET.md
+
+# session handover (working state, not shipped)
+HANDOVER-QWEN.md
+sentinel-results/
+VIDEO-SCRIPT.md
+
+# setuptools build artifact (never commit; it shadowed src/ with stale code)
+build/

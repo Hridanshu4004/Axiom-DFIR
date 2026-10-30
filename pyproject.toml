@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-dfir"
+version = "1.0.0"
+description = "AXIOM DFIR: Autonomous Evidence-Verified Digital Forensics & Incident Response"
+readme = "Axiom DFIR/README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "AXIOM DFIR Team" },
+    { name = "Adil Eskintan / Solvent CyberSecurity LLC (Upstream Core Engine)" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "mcp>=1.0",
+    "defusedxml>=0.7",
+    "pycryptodome>=3.20",
+    "rich>=13.0",
+    "psutil>=5.9",
+    "python-evtx>=0.7",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["Axiom DFIR/src"]
+
+[tool.pytest.ini_options]
+testpaths = ["Axiom DFIR/tests"]
+pythonpath = ["Axiom DFIR/src"]
+markers = [
+    "live: tests that run against real evidence on this VM",
+]
+
