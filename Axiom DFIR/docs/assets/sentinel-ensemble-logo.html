@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1280px;height:340px;overflow:hidden}
+  body{display:flex;align-items:center;justify-content:center;
+    font-family:"Inter","Liberation Sans","DejaVu Sans",sans-serif;background:transparent}
+  .card{width:1240px;height:300px;border-radius:24px;position:relative;overflow:hidden;
+    background:#050a12;
+    background-image:
+      radial-gradient(760px 380px at 88% 15%, rgba(150,26,86,.28), transparent 62%),
+      radial-gradient(560px 320px at 6% 100%, rgba(160,66,14,.24), transparent 60%),
+      linear-gradient(180deg,#0a0a0e,#050406);
+    border:1px solid rgba(219,120,90,.26);
+    box-shadow:0 0 0 1px rgba(0,0,0,.4) inset, 0 24px 60px rgba(0,0,0,.5);
+    display:flex;align-items:center;gap:44px;padding:0 58px}
+  .emblem{flex:0 0 176px;height:176px;position:relative;filter:drop-shadow(0 6px 22px rgba(200,74,18,.35))}
+  .emblem svg{position:absolute;inset:0}
+  .word{display:flex;flex-direction:column;gap:2px}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:700;
+    letter-spacing:5px;color:#e0559a;margin-bottom:6px}
+  .eyebrow .dash{width:30px;height:4px;background:linear-gradient(90deg,#db2777,#ea580c);border-radius:2px}
+  h1{font-size:70px;font-weight:800;letter-spacing:-1.5px;line-height:.98;
+    background:linear-gradient(92deg,#f7e3ec 0%,#f27fb4 20%,#d6297a 44%,#e8611f 70%,#c2410c 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{margin-top:14px;font-size:24px;color:#9fb0c0;font-weight:500}
+  .sub b{color:#f0d0be;font-weight:600}
+  .chip{margin-top:16px;display:inline-block;font-size:17px;letter-spacing:2px;font-weight:600;
+    color:#f0a878;border:1px solid rgba(219,120,60,.42);border-radius:20px;padding:6px 16px;background:rgba(30,14,10,.5)}
+</style></head><body>
+  <div class="card">
+    <div class="emblem">
+      <svg viewBox="0 0 172 172" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sun" x1="34" y1="10" x2="140" y2="162" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EF9C6B"/><stop offset=".5" stop-color="#D9703F"/>
+            <stop offset="1" stop-color="#AE3B06"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#sun)">
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(0.0 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(32.73 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(65.45 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(98.18 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(130.91 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(163.64 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(196.36 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(229.09 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(261.82 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(294.55 86 86)"/>
+        <path d="M80 86 C82 60 84 38 86 14 C88 38 90 60 92 86 Z" transform="rotate(327.27 86 86)"/>
+        </g>
+        <circle cx="86" cy="86" r="9" fill="#C24A12"/>
+      </svg>
+    </div>
+    <div class="word">
+      <div class="eyebrow"><span class="dash"></span> DFIR &middot; SOC &middot; QWEN CLOUD</div>
+      <h1>SENTINEL QWEN<br>ENSEMBLE</h1>
+      <div class="sub">Autonomous DFIR/SOC agent. <b>The AI never gets the final word.</b></div>
+      <div class="chip">QWEN ON ALIBABA CLOUD &nbsp;&middot;&nbsp; TRACK 4 &middot; AUTOPILOT AGENT</div>
+    </div>
+  </div>
+</body></html>
